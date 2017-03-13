@@ -1,0 +1,639 @@
+/* 
+Theme Name: Bootstrap 4 Sass
+Description: Bootstrap 4 with Sass
+*/
+
+@import "scss/bootstrap";
+
+// typography
+@import "base/typography";
+
+// compass
+@import "compass";
+
+// import files
+@import "base/import";
+
+// mixins
+@import "helpers/mixins";
+
+// variables
+@import "helpers/variables";
+
+
+/* GENERAL STYLES
+-------------------------------------------------*/
+
+
+/**
+ *
+ *
+	Base Type
+	Scale : based on minor 3rd, 1: 1.2
+	http://modularscale.com/scale/?px1=16&px2=66&ra1=1.2&ra2=0
+ *
+ */
+
+html {
+	font-size: 100%;
+	height: 100%;
+}
+
+body {
+  background: $bg-white;
+  font-family: $font-merriweather;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.625;
+  position: absolute;
+  height: 100%;
+  color: $color-gray-text;
+  -webkit-font-smoothing: antialiased;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+  width: 100%;
+}
+
+body, input, select, textarea {
+	@include transition(all, 0.2s,cubic-bezier(0.42, 0, 0.58, 1) );
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	text-rendering: optimizeLegibility;
+	line-height: 1;
+	margin-top: 0;
+}
+
+
+h1 {
+	font-size: 270px;
+	font-size: 16.9rem;
+	margin: 32px 0 0 0;
+	margin: 2rem 0 0 0;
+	font-family: $font-smoothie;
+	font-style:normal;
+	font-weight: bolder;
+	color: $color-white;
+	letter-spacing: 20px;
+	/*** @media (max-width: 767px) ***/
+	
+	@include media-breakpoint-down(sm) {
+		font-size: 160px;
+		font-size: 10rem;
+		margin: 48px 0 0 0;
+		margin: 2.986rem 0 0 0;
+	}
+	
+	@include media-breakpoint-down(xs) {
+		font-size: 100px;
+		font-size: 6.25rem;
+		margin: 33px 0 0 0;
+		margin: 2.074rem 0 0 0;
+	}
+}
+
+h2 {
+	font-size: 105px;
+	font-size: 6.6rem;
+	margin: 33px 0 33px 0;
+	margin: 2.074rem 0 2.074rem 0;
+	font-family: $font-smoothie;
+	color: $color-wine;
+	font-style:normal;
+	font-weight:bold;
+	letter-spacing: 15px;
+	
+	@include media-breakpoint-down(sm) {
+			font-size: 69px;
+			font-size: 4.3rem;
+			text-align: center;
+	}
+}
+
+
+h3 {
+	font-size: 66px;
+	font-size: 4.125rem;
+	font-family: $font-smoothie;;
+	font-style:normal;
+	font-weight:400;
+	color: $color-gray-text;
+	line-height: 1.5;
+	letter-spacing: 5px;
+	
+	
+	@include media-breakpoint-down(xs) {
+		font-size: 55px;
+		font-size: 3.438rem;
+		margin: 23px 0 0 0;
+		margin: 1.44rem 0 0 0;
+	}
+	
+}
+
+
+
+h4 {
+	font-size: 38px;
+	font-size: 2.387rem;
+	margin: 24px 0 16px 0;
+	margin: 1.5rem 0 1rem 0;
+	font-family: $font-merriweather;
+	font-style:normal;
+	font-weight:bold;
+	color: $color-white;
+	@include media-breakpoint-down(sm) {
+		text-align: center;
+	}
+}
+
+h5 {
+	font-size: 26px;
+	font-size: 1.658rem;
+	margin: 23px 0 0 0;
+	margin: 1.44rem 0 0 0;
+	font-family: $font-merriweather;
+	font-style:italic;
+	font-weight:700;
+}
+
+h6 {
+	font-family: $font-merriweather;
+  	font-size: 23px;
+  	font-size: 1.44rem;
+  	line-height: 1.5;
+  	color: $color-gray-text;
+  	font-weight: 400;
+}
+
+p {
+  font-family: $font-merriweather;
+  font-size: 18px;
+  font-size: 1.151rem;
+  margin: 16px 0 0 0;
+  margin: 1rem 0 0 0;
+  line-height: 1.5;
+  color: $color-gray-text;
+  font-weight: 400;
+}
+
+.scroll-touch {
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+
+a {
+  	font-family: $font-merriweather;
+    /*color: $color-white*/;
+    cursor: pointer;
+  	text-decoration: none;
+	@include transition(all, 0.2s,cubic-bezier(0.42, 0, 0.58, 1));
+  &:hover {
+    color: $color-wine;
+    text-decoration: none !important;
+    outline: none !important;
+  }
+  &:active, &:focus {
+    outline: none !important;
+    text-decoration: none !important;
+    color: $color-white;
+  }
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    display: table;
+    overflow: hidden;
+    table-layout: fixed;
+}
+
+strong, b {
+  font-weight: 700;
+}
+
+em, i {
+  font-style: italic;
+}
+
+
+
+.clear {
+  clear: both;
+}
+
+.divider {
+		margin: 20px 0 0 0;
+}
+
+.divider:after {
+	display: block;
+	width: 450px;
+	height: 1px;
+	margin: 0 auto;
+	content: '';
+	background-color: #89b460;
+}
+
+
+/****************** section padding ***********/
+
+
+.section-padding-top {
+	padding-top: 32px;
+	padding-top: 2rem;
+}
+
+
+.section-padding-bottom {
+	padding-bottom: 64px;
+	padding-bottom: 4rem;
+}
+
+/************************* NAV CONTENT **********************************/
+.bg-inverse-custom .navbar-nav .nav-item {
+	@include media-breakpoint-down(sm) {
+		background-color: #fff;
+	}
+}
+
+.navbar-nav .nav-item {
+    padding-top: 0;
+	padding-right: 3rem;
+    line-height: 1.2;
+	font-family: $font-merriweather;
+	font-size: 19px;
+	font-size: 1.2rem;
+}
+ 
+.navbar-nav .nav-item:last-child {
+	padding-left: 390px;
+	font-weight: bolder;
+	@include media-breakpoint-down(lg) {
+		padding-left: 16px;
+	}
+		
+}
+
+.navbar-nav .nav-link {
+	color: $color-white;
+	text-decoration: none;
+	@include transition(all, 0.2s,cubic-bezier(0.42, 0, 0.58, 1));
+	  &:hover {
+		color: $color-wine;
+		text-decoration: none !important;
+		outline: none !important;
+	  }
+	  &:active, &:focus {
+		outline: none !important;
+		text-decoration: none !important;
+		color: $color-white;
+	  }
+}
+
+.navbar-fixed-top {
+    position: absolute;
+}
+
+.navbar-brand {
+	padding-top: 0;
+    padding-bottom: 0;
+	color: #fff;
+}
+
+
+.navbar-nav .nav-item + .nav-item {
+  	margin-left: 0;
+}
+
+#collapsingNavbar,
+#collapsingNavbarInverse {
+  @include media-breakpoint-up(md) {
+    display: block !important;
+  }
+}
+
+.navbar-toggleable-custom {
+  @include media-breakpoint-down(sm) {
+    clear: both;
+  }
+} 
+
+.navbar-toggler {
+    padding: 0;
+    margin-top: 1.1625rem;
+    margin-left: .75rem;
+    font-size: 2rem;
+    border: 0;
+    border-radius: 0;
+}
+
+
+@include media-breakpoint-down(sm) {
+	.navbar-nav {
+		float: none !important;
+		width: 100%;
+		.nav-item {
+			display: block;
+			float: none;
+			text-align: right;
+			background-color: #fff;
+		}
+	}
+	.bg-inverse-custom .navbar-nav {
+		.nav-item {
+			background-color: #fff;
+		}
+		.nav-link {
+			padding: 1rem;
+			border-bottom: 1px solid darken(#fff, 20%);
+			color: $color-gray-text;
+			&:focus,
+			&:hover {
+				color: $color-light-red;
+			}
+		}
+		
+		.active > .nav-link {
+			color: $color-light-red !important;
+		}
+	}
+}
+
+
+
+.bg-inverse-custom {
+	margin-top: 32px;
+    margin-top: 2rem;
+    background-color: transparent;
+}
+
+.bg-inverse {
+    color: #fff;
+}
+
+.bg-inverse .navbar-toggler {
+    color: rgba(255,255,255,0.75);
+}
+
+.bg-inverse .navbar-toggler:focus, .bg-inverse .navbar-toggler:hover {
+    color: #fff;
+}
+
+.bg-green {
+	background-color: #89b460;
+}
+/************************* END NAV CONTENT **********************************/
+
+/************************* HERO CONTENT **********************************/
+
+.jumbotron {
+	padding-top: 10rem;
+	margin-bottom: 0;
+	background: #000 url(../img/bg-header.jpg) no-repeat top center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	border-radius: 0;
+	@include media-breakpoint-down(sm) {
+		padding-top: 6.25rem;
+	}
+	.hero {
+		text-align: right;
+		@include media-breakpoint-down(xs) {
+			text-align: center;
+		}
+	}
+	.call-action {
+		margin: 5rem 1.5rem 5rem 0;
+		text-align: right;
+		@include media-breakpoint-down(xs) {
+			text-align: center;
+			margin: 2.5rem 0rem 2.5rem 0;
+			margin: 40px 0 40px 0;
+		}
+		.btn {
+			padding: 1rem 4.5rem;
+			color: $color-white;
+			background-color: $color-light-red;
+			font-size: 1.8rem;
+			font-weight: bold;
+			text-align: center;
+			@include border-radius(10px);
+			@include media-breakpoint-down(xs) {
+				padding: 0.8rem 4.0rem;
+				margin: 2rem 0 3.5rem 0;
+				font-size: 1.2rem;
+			}
+		}
+		a {
+			opacity: 1;
+			transition: opacity .175s;
+		}
+		a:hover,
+		a:focus {
+			opacity: .8;
+		}
+	}
+}
+/************************* describe products  CONTENT **********************************/
+
+.description-products {
+	p {
+		text-align: left;
+		font-style: italic;
+		@include media-breakpoint-down(sm) {
+			text-align: center;
+			margin: 0 20px;
+		}
+	}
+	
+	.desc-prod-1 {
+		margin: 20px 0 0 10px;	
+		@include media-breakpoint-down(sm) {
+			margin: 20px 0 20px 10px;	
+		}
+	}
+}
+
+
+/************************* testimonials CONTENT **********************************/
+
+.testimonials {
+		
+	background-color: #89b460;
+	.testimonilas-bg-top {
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		width: 100%;
+		position: relative;
+		top: -10px;
+	}
+	
+	.testimonials-content {
+		width: 100%;
+		margin-top: 32px;
+	}
+	h2 {
+		color: $color-white;
+	}
+	
+	.avatar-content {
+		max-width: 350px;
+		margin: 0 auto;
+		text-align: left;
+		@include media-breakpoint-down(sm) {
+			text-align: center;
+		}
+		
+		p {
+			margin: 1.5rem 0 0 0;
+			font-size: 23px;
+  			font-size: 1.44rem;
+			color: $color-white;
+		}
+		
+		p + p {
+			margin: 0;
+			font-size: 13px;
+  			font-size: 0.833rem; 
+		}
+	}
+	
+	.opinion-content p {
+		margin: 1.5rem 0 2.5rem 0;
+		font-size: 23px;
+  		font-size: 1.44rem;
+		color: $color-white;
+		font-style: italic;
+	}
+	
+	.testimonilas-bg-bottom {
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		width: 100%;
+		position: relative;
+		top: 10px; 
+	}
+	
+}
+
+/************************* products CONTENT **********************************/
+
+.products {
+	.product-section {
+		width: 100%;
+		height: auto;
+		margin: 40px 0 50px 0;
+		text-align: center;
+	}
+	
+	.btn {
+		padding: 8px 40px;
+		font-size: 16px;
+		font-size: 1rem;
+    	border: solid 2px;
+    	@include border-radius(10px);
+    	display: inline-block;
+    	text-transform: uppercase;
+		color: $color-light-red;
+		width: 80%;
+	}
+	
+	.btn:hover, .btn:focus {
+    	color: $color-white;
+    	border-color: $color-light-red;
+    	background-color: $color-light-red;
+	}
+}
+
+/************************* stay alert CONTENT **********************************/
+
+.stay-alert {
+	.signup-form {
+		margin: 30px 110px 0 110px;
+		@include media-breakpoint-down(md) {
+			margin: 30px 0 0 0;
+		}
+	}
+	
+	.form-input-group {
+    	width: 80%;
+		height: 55px;
+		margin: 0 auto 10px;
+		border-radius: 10px;
+		border: solid 1px $color-gray-text;
+		text-align: left;
+		position: relative;
+	}
+	
+	.form-input-group input {
+    	
+    	width: 100%;
+    	height: 100%;
+    	@include border-radius(10px);
+    	border: none;
+		text-align: center;
+		font-style: italic;
+	}
+	
+	.signup-form .sign-up-btn {
+		border: solid 2px $color-light-red;
+   		@include border-radius(10px);
+    	display: inline-block;
+    	text-transform: uppercase;
+		padding: 15px 0;
+		width: 80%;
+		font-size: 13px;
+		color: $color-white;
+		background-color: $color-light-red;
+		&:hover,
+		&:focus {
+			opacity: .8;
+		}
+	}
+}
+
+
+/*************************footer CONTENT **********************************/
+
+footer {
+	background-color: #89b460;
+	.footer-bg-top {
+		-webkit-background-size: cover;
+		-moz-background-size: cover;
+		-o-background-size: cover;
+		background-size: cover;
+		width: 100%;
+		position: relative;
+		top: -10px
+	}
+	
+	@include media-breakpoint-down(sm) {
+		.footer-image {
+			margin: 20px 0 0 0;
+		}
+	}
+	
+	.contact-info {
+		margin: 20px 0 0px 0;
+		p {
+			color:  $color-white;
+		}
+	}
+}
